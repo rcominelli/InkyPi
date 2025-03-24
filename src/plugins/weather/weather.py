@@ -78,8 +78,8 @@ class Weather(BasePlugin):
         current_icon = current.get("weather")[0].get("icon").replace("n", "d")
         location_str = f"{location_data.get('name')}, {location_data.get('state', location_data.get('country'))}"
         data = {
-            # "current_date": dt.strftime("%A, %B %d"),
-            "current_date": dt.strftime("%A, %B %d, %I:%M %p"),
+            #"current_date": dt.strftime("%A, %B %d"),
+            "current_date": dt.strftime("%A, %B %d, %H:%M"),
             "location": location_str,
             "current_day_icon": self.get_plugin_dir(f'icons/{current_icon}.png'),
             "current_temperature": str(round(current.get("temp"))),
